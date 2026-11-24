@@ -1,0 +1,20 @@
+/* Minimalist Partners Section */
+.partners-logo-grid {
+    transition: all 0.3s ease;
+}
+
+.partners-img-minimal {
+    max-height: 80px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(0.6);
+    transition: all 0.4s ease;
+}
+
+.partners-logo-grid:hover .partners-img-minimal {
+    filter: grayscale(0%) opacity(1);
+}
+
+.partners-minimal {
+    border-top: 1px solid var(--border-light);
+}

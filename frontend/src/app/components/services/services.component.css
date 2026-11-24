@@ -1,0 +1,98 @@
+/* Minimalist Services */
+.service-minimal-card {
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.post-thumb {
+    width: 56px;
+    height: 56px;
+    border-radius: 10px;
+    object-fit: cover;
+    background: #f8f9fa;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.service-minimal-card:hover {
+    border-color: var(--secondary-blue);
+    background-color: var(--bg-light);
+    transform: translateY(-5px);
+}
+
+.service-minimal-card a {
+    opacity: 0.8;
+    transition: all 0.2s ease;
+}
+
+.service-minimal-card:hover a {
+    opacity: 1;
+    padding-left: 5px;
+}
+
+.post-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 1050;
+}
+
+.post-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1060;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+.post-modal-card {
+    width: min(860px, 100%);
+    max-height: calc(100vh - 32px);
+    overflow: auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+}
+
+.post-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.post-modal-title {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.post-modal-close {
+    border: none;
+    background: transparent;
+    font-size: 24px;
+    line-height: 1;
+    opacity: 0.7;
+}
+
+.post-modal-close:hover {
+    opacity: 1;
+}
+
+.post-modal-body {
+    padding: 16px;
+}
+
+.post-modal-image {
+    width: 100%;
+    height: min(360px, 45vh);
+    object-fit: cover;
+    border-radius: 14px;
+    margin-bottom: 14px;
+    background: #f8f9fa;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}

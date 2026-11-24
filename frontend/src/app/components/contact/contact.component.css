@@ -1,0 +1,56 @@
+/* Minimalist Contact Section */
+.contact-icon-box {
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    border: 1px solid var(--border-light);
+}
+
+.social-icon-box {
+    width: 36px;
+    height: 36px;
+    background-color: #fff;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.social-icon-box:hover {
+    background-color: var(--primary-blue);
+    color: #fff;
+    border-color: var(--primary-blue);
+    transform: translateY(-2px);
+}
+
+.minimal-input-v2 {
+    border-radius: 10px;
+    border: 1px solid var(--border-light);
+    padding: 0.75rem 1rem;
+    background-color: #fff;
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+}
+
+.minimal-input-v2:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.08);
+    outline: none;
+}
+
+/* Form Select Reset */
+.form-select.minimal-input-v2 {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 16px 12px;
+}

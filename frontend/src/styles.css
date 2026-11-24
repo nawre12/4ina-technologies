@@ -1,0 +1,175 @@
+/* Global Styles - Minimalist & Clean UI */
+:root {
+    /* Colors - Light & Soft */
+    --bg-white: #ffffff;
+    --bg-light: #f8fafc;
+    --primary-blue: #2563eb;
+    --secondary-blue: #3b82f6;
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+    --border-light: #e2e8f0;
+
+    /* Fonts */
+    --font-main: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-white);
+    color: var(--text-dark);
+    line-height: 1.6;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-main);
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 3.5rem;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: 2.5rem;
+    letter-spacing: -0.01em;
+}
+
+p {
+    color: var(--text-muted);
+    font-size: 1.125rem;
+}
+
+section {
+    padding: 120px 0;
+}
+
+/* Utilities */
+.container {
+    max-width: 1200px;
+}
+
+.text-primary {
+    color: var(--primary-blue) !important;
+}
+
+.bg-light {
+    background-color: var(--bg-light) !important;
+}
+
+.rounded-xl {
+    border-radius: 1rem;
+}
+
+/* Buttons */
+.btn-minimal {
+    padding: 12px 32px;
+    font-family: var(--font-main);
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    border: none;
+    font-size: 1rem;
+}
+
+.btn-minimal-primary {
+    background-color: var(--primary-blue);
+    color: #fff;
+}
+
+.btn-minimal-primary:hover {
+    background-color: var(--secondary-blue);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-minimal-outline {
+    background-color: transparent;
+    border: 1px solid var(--border-light);
+    color: var(--text-dark);
+}
+
+.btn-minimal-outline:hover {
+    background-color: var(--bg-light);
+    border-color: var(--text-muted);
+}
+
+/* Minimalist Cards */
+.minimal-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.minimal-card:hover {
+    border-color: var(--secondary-blue);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+/* Animations */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.delay-100 {
+    animation-delay: 0.1s;
+}
+
+.delay-200 {
+    animation-delay: 0.2s;
+}
+
+.delay-300 {
+    animation-delay: 0.3s;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}

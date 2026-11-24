@@ -1,0 +1,77 @@
+<nav class="navbar navbar-expand-lg fixed-top transition-all" [class.navbar-scrolled]="isScrolled">
+    <div class="container py-2">
+        <a href="#" class="navbar-brand d-flex align-items-center">
+            <img src="assets/logo.jpg" alt="4InA" class="logo-img me-2">
+            <div class="brand-text">
+                <span class="fw-bold text-dark fs-5">4InA</span>
+                <span class="fw-light text-muted ms-1 fs-6">Technologie</span>
+            </div>
+        </a>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center gap-lg-3">
+                <li class="nav-item">
+                    <a routerLink="/" class="nav-link minimalist-link" routerLinkActive="active"
+                        [routerLinkActiveOptions]="{exact: true}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/about" class="nav-link minimalist-link" routerLinkActive="active">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/services" class="nav-link minimalist-link">Services</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link minimalist-link dropdown-toggle" href="#" id="solutionDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Our Solution
+                    </a>
+                    <ul class="dropdown-menu minimalist-dropdown border-0 shadow-sm" aria-labelledby="solutionDropdown">
+                        <li><a class="dropdown-item" routerLink="/solutions/hardware"
+                                routerLinkActive="active">Hardware</a></li>
+                        <li><a class="dropdown-item" routerLink="/solutions/software"
+                                routerLinkActive="active">Software</a></li>
+                        <li><a class="dropdown-item" routerLink="/solutions/oilapp" routerLinkActive="active">OilApp</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/platform" class="nav-link minimalist-link" routerLinkActive="active">Platform</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link minimalist-link dropdown-toggle" href="#" id="postsDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Posts
+                    </a>
+                    <ul class="dropdown-menu minimalist-dropdown border-0 shadow-sm" aria-labelledby="postsDropdown">
+                        <li><a class="dropdown-item" routerLink="/posts/events" routerLinkActive="active">Events</a>
+                        </li>
+                        <li><a class="dropdown-item" routerLink="/posts/blog" routerLinkActive="active">Blog</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/login" class="nav-link minimalist-link text-primary-4ina fw-bold"
+                        routerLinkActive="active">
+                        <i class="fas fa-lock me-1"></i>Admin
+                    </a>
+                </li>
+                <li class="nav-item border-start ps-3 ms-2 d-none d-lg-block">
+                    <a routerLink="/" fragment="contact"
+                        class="btn btn-minimal btn-minimal-primary px-4 py-2">Contact</a>
+                </li>
+                <li class="nav-item d-lg-none mt-3">
+                    <a routerLink="/" fragment="contact" class="nav-link minimalist-link">Contact</a>
+                </li>
+
+                <!-- Language Selection -->
+                <li class="nav-item ms-lg-2">
+                    <span class="text-muted small fw-medium cursor-pointer hover-blue">FR</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

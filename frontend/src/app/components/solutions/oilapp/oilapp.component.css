@@ -1,0 +1,195 @@
+.oilapp-page {
+    color: #1e293b;
+    background-color: #ffffff;
+}
+
+.hero-section {
+    background-color: #ffffff !important;
+}
+
+.hero-section img {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    border: none !important;
+}
+
+.badge-premium {
+    display: inline-block;
+    background: rgba(37, 99, 235, 0.1);
+    color: #2563eb;
+    padding: 10px 24px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1px solid rgba(37, 99, 235, 0.1);
+}
+
+.btn-premium {
+    background: #1e293b;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 100px;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.btn-premium:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+}
+
+.bg-light {
+    background-color: #f8fafc !important;
+}
+
+.bg-pastel-blue {
+    background: linear-gradient(135deg, #f0f7ff 0%, #e0f0ff 100%) !important;
+    border-top: 1px solid rgba(37, 99, 235, 0.05);
+    border-bottom: 1px solid rgba(37, 99, 235, 0.05);
+}
+
+.shadow-xl {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.rounded-4 {
+    border-radius: 1.5rem !important;
+}
+
+.feature-item-v2 h4 {
+    color: #0c1c3c;
+    font-size: 1.25rem;
+}
+
+.feature-icon-box {
+    min-width: 60px;
+    height: 60px;
+    background-color: #2563eb;
+    /* Changed to Blue */
+    color: white;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.mockup-mobile-large {
+    max-width: 280px;
+    /* Reduced from 350px */
+    border: none;
+    border-radius: 30px !important;
+    transform: perspective(1500px) rotateY(-15deg) rotateX(5deg) rotateZ(1deg);
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease;
+}
+
+.mockup-mobile-large:hover {
+    transform: perspective(1500px) rotateY(-5deg) rotateX(0deg) rotateZ(0deg);
+}
+
+.text-navy {
+    color: #0c1c3c;
+}
+
+.shadow-2xl {
+    box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.3) !important;
+}
+
+.benefit-card {
+    transition: transform 0.3s;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Action visuals overlap/grouping */
+.action-visuals {
+    position: relative;
+    padding: 40px 0;
+}
+
+.mobile-ui {
+    max-width: 200px;
+    z-index: 2;
+    transform: rotate(-5deg);
+}
+
+.dashboard-ui {
+    max-width: 500px;
+    margin-left: -50px;
+    z-index: 1;
+}
+
+@media (max-width: 991px) {
+    .action-visuals {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dashboard-ui {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}
+
+.list-unstyled li {
+    padding-bottom: 8px;
+}
+
+/* Key Features Redesign Styles */
+.features-visual-container {
+    padding: 20px;
+}
+
+.features-central-image {
+    max-height: 500px;
+    width: auto;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
+    transition: transform 0.4s ease;
+}
+
+.features-central-image:hover {
+    transform: scale(1.02);
+}
+
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.1);
+    transition: all 0.3s ease;
+}
+
+.feature-card-v3:hover .icon-circle {
+    background: #2563eb;
+    color: white !important;
+    transform: translateY(-5px);
+}
+
+.feature-card-v3:hover .icon-circle i {
+    color: white !important;
+}
+
+.feature-card-v3 h5 {
+    color: #0c1c3c;
+    transition: color 0.3s ease;
+}
+
+.feature-card-v3:hover h5 {
+    color: #2563eb;
+}
+
+/* FAQ subtle styling */
+button:focus {
+    outline: none;
+    box-shadow: none;
+}

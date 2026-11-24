@@ -1,0 +1,30 @@
+# Angular
+node_modules/
+dist/
+.angular/
+# Java / Spring Boot / Maven
+target/
+*.class
+# IDE
+.idea/
+.vscode/
+# Secrets
+.env
+.env.*
+!.env.example
+application-local.properties
+# Logs
+*.log
+# OS
+.DS_Store
+Thumbs.db
+# Configuration locale contenant des identifiants
+backend/src/main/resources/application.properties
+# Données locales et fichiers uploadés
+backend/data/
+backend/uploads/
+# Fichiers de compilation et journaux
+frontend/build_err.txt
+frontend/build_output.txt
+# Fichiers temporaires
+*.backup

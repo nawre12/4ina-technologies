@@ -1,0 +1,213 @@
+/* Minimalist Hero */
+.hero-minimalist {
+    min-height: 90vh;
+    padding: 140px 0 80px 0;
+    background-color: var(--bg-white);
+    position: relative;
+}
+
+.badge-new {
+    display: inline-block;
+    background-color: rgba(37, 99, 235, 0.05);
+    color: var(--primary-blue);
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-family: var(--font-main);
+}
+
+.hero-image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blob-bg {
+    position: absolute;
+    width: 140%;
+    height: 140%;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+    z-index: 0;
+    top: -20%;
+    left: -20%;
+}
+
+.animated-blob {
+    animation: blobMorph 15s infinite alternate ease-in-out;
+}
+
+@keyframes blobMorph {
+    0% {
+        transform: scale(1) translate(0, 0);
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+
+    50% {
+        transform: scale(1.1) translate(5%, 5%);
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+
+    100% {
+        transform: scale(1) translate(0, 0);
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+}
+
+/* Floating Cards */
+.hero-visual-container {
+    padding: 40px;
+}
+
+.floating-card {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border-light);
+    z-index: 10;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    animation: float 6s infinite ease-in-out;
+}
+
+.card-1 {
+    top: 10%;
+    right: -5%;
+    animation-delay: 0s;
+}
+
+.card-2 {
+    bottom: 20%;
+    left: -10%;
+    animation-delay: 2s;
+}
+
+.card-3 {
+    top: 40%;
+    left: -5%;
+    animation-delay: 4s;
+}
+
+.icon-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Hover Effects */
+.hover-tilt {
+    transition: transform 0.3s ease-out;
+}
+
+.hover-tilt:hover {
+    transform: perspective(1000px) rotateX(2deg) rotateY(2deg) scale(1.02);
+}
+
+/* Custom Buttons */
+.btn-custom {
+    display: inline-flex;
+    align-items: center;
+    border: none;
+    border-radius: 50px;
+    padding: 0;
+    font-family: var(--font-main);
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.btn-custom-primary {
+    background-color: var(--secondary-blue);
+    color: #fff;
+}
+
+.btn-custom-primary .btn-icon {
+    background-color: var(--primary-blue);
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-custom-primary .btn-text {
+    padding: 0 24px;
+}
+
+.btn-custom-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
+    filter: brightness(1.1);
+}
+
+.btn-custom-outline {
+    background: transparent;
+    border: 1px solid var(--border-light);
+    color: var(--text-dark);
+    padding: 12px 28px;
+}
+
+.btn-custom-outline .btn-icon-sm {
+    margin-left: 12px;
+    transition: transform 0.3s ease;
+}
+
+.btn-custom-outline:hover {
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+    transform: translateY(-3px);
+    background-color: rgba(37, 99, 235, 0.02);
+}
+
+.btn-custom-outline:hover .btn-icon-sm {
+    transform: translateX(4px);
+}
+
+.delay-200 {
+    animation-delay: 0.2s;
+}
+
+@media (max-width: 991.98px) {
+    .hero-minimalist {
+        padding-top: 120px;
+        text-align: center !important;
+    }
+
+    .hero-minimalist h1 {
+        font-size: 2.5rem;
+    }
+
+    .text-start {
+        text-align: center !important;
+    }
+
+    .pe-lg-5 {
+        padding-right: 0 !important;
+    }
+
+    .justify-content-center-mobile {
+        justify-content: center !important;
+    }
+
+    .d-flex.gap-4 {
+        justify-content: center !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 1rem !important;
+    }
+}

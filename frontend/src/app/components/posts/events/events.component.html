@@ -1,0 +1,78 @@
+<section class="events-section py-5">
+    <div class="container py-5 mt-5">
+        <div class="text-center mb-5">
+            <h6 class="text-primary text-uppercase fw-bold letter-spacing-2">Latest Updates</h6>
+            <h1 class="display-4 fw-bold text-dark">Our Events & News</h1>
+            <p class="lead text-secondary mx-auto" style="max-width: 700px;">
+                Explore our journey, interactions, and achievements in determining the future of energy and AI.
+            </p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6" *ngFor="let event of events">
+                <div class="card h-100 border-0 shadow-sm event-card">
+                    <div class="card-img-wrapper">
+                        <ng-container *ngIf="event.image; else videoContent">
+                            <img [src]="event.image" class="card-img-top" [alt]="event.title">
+                        </ng-container>
+                        <ng-template #videoContent>
+                            <ng-container [ngSwitch]="event.media[0].type">
+                                <video *ngSwitchCase="'video'" [src]="event.media[0].url" class="card-img-top"
+                                    controls></video>
+                                <iframe *ngSwitchCase="'iframe'" [src]="getSafeUrl(event.media[0].url)"
+                                    class="card-img-top gallery-iframe" allowfullscreen></iframe>
+                            </ng-container>
+                        </ng-template>
+                        <div class="category-badge">{{event.date}}</div>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <h5 class="card-title fw-bold text-dark mb-3">{{event.title}}</h5>
+                        <p class="card-text text-secondary mb-4 flex-grow-1">{{event.description}}</p>
+                        <button (click)="openModal(event)"
+                            class="btn btn-outline-primary rounded-pill fw-bold align-self-start px-4">
+                            Read More
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Event Modal -->
+    <div class="event-modal-overlay" *ngIf="isModalOpen" (click)="closeModal()">
+        <div class="event-modal-container fade-in-scale" (click)="$event.stopPropagation()">
+            <button class="modal-close-btn" (click)="closeModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-content-wrapper" *ngIf="selectedEvent">
+                <!-- Media Section -->
+                <div class="modal-gallery-section" *ngIf="selectedEvent.media && selectedEvent.media.length > 0">
+                    <div class="main-media-display p-3 shadow-inner">
+                        <div class="gallery-scroll d-flex gap-3 overflow-auto pb-3 custom-scrollbar">
+                            <div *ngFor="let item of selectedEvent.media; let i = index"
+                                class="gallery-item-wrapper flex-shrink-0">
+                                <img *ngIf="item.type === 'image'" [src]="item.url" [alt]="selectedEvent.title"
+                                    class="gallery-img rounded-4 shadow-sm">
+                                <video *ngIf="item.type === 'video'" [src]="item.url" controls
+                                    class="gallery-video rounded-4 shadow-sm"></video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Section -->
+                <div class="modal-text-section p-4 p-md-5">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <span class="badge bg-primary-subtle text-primary rounded-pill px-3 py-2 fw-bold text-uppercase"
+                            style="font-size: 0.75rem; letter-spacing: 1px;">{{selectedEvent.date}}</span>
+                    </div>
+                    <h2 class="display-6 fw-bold text-dark mb-4">{{selectedEvent.title}}</h2>
+                    <div class="detailed-description text-secondary">
+                        <p class="lead" style="white-space: pre-line; font-size: 1.1rem; line-height: 1.8;">
+                            {{selectedEvent.fullDescription}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,80 @@
+<section class="blog-section py-5 bg-light-section">
+    <div class="container py-5 mt-5">
+        <!-- Header -->
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <span class="text-primary fw-bold text-uppercase letter-spacing-2">Insights & News</span>
+                <h1 class="display-4 fw-bold mt-2 text-dark">Our Latest <span class="text-primary-4ina">Blogs</span>
+                </h1>
+                <p class="lead text-secondary mx-auto mt-3" style="max-width: 700px;">
+                    Your resource for the latest insights in Energy Management, AI-powered Solutions, and Industry 4.0
+                    trends.
+                </p>
+            </div>
+        </div>
+
+        <!-- Blog Grid -->
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4" *ngFor="let post of blogPosts">
+                <article class="card h-100 border-0 shadow-sm blog-card">
+                    <div class="card-img-top position-relative overflow-hidden" style="height: 240px;">
+                        <img [src]="post.imageUrl" [alt]="post.title"
+                            class="w-100 h-100 object-fit-cover transition-scale">
+                        <div
+                            class="category-badge position-absolute top-0 start-0 m-3 px-3 py-1 bg-primary text-white rounded-pill small fw-bold shadow-sm">
+                            {{ post.category }}
+                        </div>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <div class="text-muted small mb-2">
+                            <i class="far fa-calendar-alt me-2"></i>{{ post.createdAt | date:'MMM d, yyyy' }}
+                        </div>
+                        <h3 class="card-title h5 fw-bold mb-3">
+                            <a href="#" class="text-decoration-none text-dark hover-primary">{{ post.title }}</a>
+                        </h3>
+                        <p class="card-text text-secondary mb-4 flex-grow-1 line-clamp-3">
+                            {{ post.content | slice:0:150 }}...
+                        </p>
+                        <button (click)="openModal(post)"
+                            class="btn btn-outline-primary rounded-pill fw-bold w-100 mt-auto">
+                            Read More
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog Detail Modal -->
+    <div class="blog-modal-overlay" *ngIf="isModalOpen" (click)="closeModal()">
+        <div class="blog-modal-container fade-in-scale" (click)="$event.stopPropagation()">
+            <button class="modal-close-btn" (click)="closeModal()">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <div class="modal-content-wrapper" *ngIf="selectedPost">
+                <!-- Header Image -->
+                <div class="modal-hero-image">
+                    <img [src]="selectedPost.imageUrl" [alt]="selectedPost.title">
+                    <div class="modal-category-badge">{{selectedPost.category}}</div>
+                </div>
+
+                <!-- Text Content -->
+                <div class="modal-text-section p-4 p-md-5">
+                    <div class="text-muted small mb-3">
+                        <i class="far fa-calendar-alt me-2"></i>
+                        {{ selectedPost.createdAt | date:'MMMM d, yyyy' }}
+                    </div>
+
+                    <h2 class="display-6 fw-bold text-dark mb-4">{{selectedPost.title}}</h2>
+
+                    <div class="detailed-content text-secondary">
+                        <p class="lead" style="white-space: pre-line; font-size: 1.1rem; line-height: 1.8;">
+                            {{selectedPost.content}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

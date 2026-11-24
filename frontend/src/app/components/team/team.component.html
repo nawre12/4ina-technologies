@@ -1,0 +1,38 @@
+<section class="team-minimalist bg-white">
+    <div class="container">
+        <div class="row justify-content-center text-center mb-5 fade-in-up">
+            <div class="col-lg-8">
+                <h6 class="text-primary fw-bold text-uppercase mb-3" style="font-size: 0.75rem; letter-spacing: 2px;">
+                    Who We Are</h6>
+                <h2 class="fw-bold mb-4">Our <span class="text-primary">Team</span></h2>
+                <p class="text-muted mx-auto" style="max-width: 800px;">
+                    Driven by a shared commitment to excellence, our team combines diverse talents and perspectives to
+                    achieve outstanding results together.
+                </p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center g-5 mb-5">
+            <div class="col-md-5 col-lg-4 fade-in-up delay-100" *ngFor="let founder of founders">
+                <div class="founder-minimal-card text-center">
+                    <div class="img-container mb-4 mx-auto shadow-sm">
+                        <img [src]="founder.image" [alt]="founder.name" class="rounded-circle img-fluid">
+                    </div>
+                    <h4 class="fw-bold text-dark mb-1">{{ founder.name }}</h4>
+                    <p class="text-primary small fw-bold text-uppercase mb-3" style="letter-spacing: 1px;">{{
+                        founder.role }}</p>
+                    <a [href]="founder.linkedin" target="_blank" class="social-link-minimal text-muted"><i
+                            class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center flex-wrap gap-2 mt-5 fade-in-up delay-300">
+            <span class="dept-tag" *ngFor="let dept of departments">{{ dept }}</span>
+        </div>
+
+        <div class="d-flex justify-content-center flex-wrap gap-2 mt-3 fade-in-up delay-300">
+            <span class="team-tag" *ngFor="let team of subTeams">{{ team }}</span>
+        </div>
+    </div>
+</section>

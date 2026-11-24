@@ -1,0 +1,47 @@
+/* Minimalist Footer */
+.footer {
+    background-color: var(--bg-light);
+}
+
+.footer h6 {
+    font-family: var(--font-main);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8125rem;
+}
+
+.footer-list a {
+    transition: all 0.2s ease;
+    font-family: var(--font-body);
+}
+
+.hover-blue:hover {
+    color: var(--primary-blue) !important;
+}
+
+.social-icon {
+    font-size: 1.1rem;
+    transition: transform 0.2s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-2px);
+}
+
+.minimal-input {
+    border-radius: 8px;
+    border: 1px solid var(--border-light);
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+    background: var(--bg-white);
+}
+
+.minimal-input:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    outline: none;
+}
+
+.footer-bottom {
+    border-color: var(--border-light) !important;
+}

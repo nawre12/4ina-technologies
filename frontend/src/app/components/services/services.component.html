@@ -1,0 +1,88 @@
+<section id="services" class="bg-white">
+    <div class="container">
+        <div class="row justify-content-center text-center mb-5 fade-in-up">
+            <div class="col-lg-8">
+                <h6 class="text-primary fw-bold text-uppercase mb-3" style="font-size: 0.75rem; letter-spacing: 2px;">
+                    Professional Services</h6>
+                <h2 class="fw-bold mb-4">Empowering Your <span class="text-primary">Energy Journey</span></h2>
+                <p class="text-muted">Long-term follow-up and expert implementation for industrial efficiency.</p>
+            </div>
+        </div>
+
+        <div class="row g-4 mt-2">
+            <!-- Dynamic Services -->
+            <div class="col-md-6 col-lg-3 fade-in-up" *ngFor="let service of services; let i = index"
+                [style.animation-delay]="(i * 100) + 'ms'">
+                <div class="service-minimal-card p-4 h-100">
+                    <div class="mb-4 d-flex align-items-center justify-content-between">
+                        <ng-container *ngIf="service.imageUrl; else defaultIcon">
+                            <img [src]="getImageUrl(service)" (error)="onImageError($event)" alt="" class="post-thumb">
+                        </ng-container>
+                        <ng-template #defaultIcon>
+                            <i class="fas fa-cogs text-primary fs-4"></i>
+                        </ng-template>
+                        <span class="text-light-blue fw-bold" style="font-size: 1.5rem; opacity: 0.2;">0{{ i + 1
+                            }}</span>
+                    </div>
+                    <h5 class="fw-bold mb-3">{{ service.title }}</h5>
+                    <p class="text-muted small mb-4">
+                        {{ service.content }}
+                    </p>
+                    <a href="#" (click)="$event.preventDefault(); openDetails(service)"
+                        class="text-primary fw-bold text-decoration-none small">Explore Service <i
+                            class="fas fa-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Solutions Section -->
+        <div *ngIf="solutions.length > 0" class="row justify-content-center text-center mb-5 mt-5 fade-in-up">
+            <div class="col-lg-8">
+                <h6 class="text-primary fw-bold text-uppercase mb-3" style="font-size: 0.75rem; letter-spacing: 2px;">
+                    Our Solutions</h6>
+                <h2 class="fw-bold mb-4">Innovative <span class="text-primary">Solutions</span></h2>
+            </div>
+        </div>
+        <div *ngIf="solutions.length > 0" class="row g-4">
+            <div class="col-md-6 col-lg-3 fade-in-up" *ngFor="let solution of solutions; let i = index"
+                [style.animation-delay]="(i * 100) + 'ms'">
+                <div class="service-minimal-card p-4 h-100">
+                    <div class="mb-4 d-flex align-items-center justify-content-between">
+                        <ng-container *ngIf="solution.imageUrl; else defaultSolutionIcon">
+                            <img [src]="getImageUrl(solution)" (error)="onImageError($event)" alt="" class="post-thumb">
+                        </ng-container>
+                        <ng-template #defaultSolutionIcon>
+                            <i class="fas fa-lightbulb text-primary fs-4"></i>
+                        </ng-template>
+                        <span class="text-light-blue fw-bold" style="font-size: 1.5rem; opacity: 0.2;">S{{ i + 1
+                            }}</span>
+                    </div>
+                    <h5 class="fw-bold mb-3">{{ solution.title }}</h5>
+                    <p class="text-muted small mb-4">
+                        {{ solution.content }}
+                    </p>
+                    <a href="#" (click)="$event.preventDefault(); openDetails(solution)"
+                        class="text-primary fw-bold text-decoration-none small">Explore Solution <i
+                            class="fas fa-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div *ngIf="showDetailsModal" class="post-modal-backdrop" (click)="closeDetails()"></div>
+    <div *ngIf="showDetailsModal" class="post-modal" role="dialog" aria-modal="true">
+        <div class="post-modal-card" (click)="$event.stopPropagation()">
+            <div class="post-modal-header">
+                <div class="post-modal-title">Continue reading</div>
+                <button type="button" class="post-modal-close" (click)="closeDetails()" aria-label="Close">×</button>
+            </div>
+            <div class="post-modal-body" *ngIf="selectedPost as p">
+                <img *ngIf="p.imageUrl" [src]="getImageUrl(p)" (error)="onImageError($event)" class="post-modal-image"
+                    [alt]="p.title">
+                <h4 class="fw-bold mb-3">{{ p.title }}</h4>
+                <p class="text-muted mb-0" style="white-space: pre-line;">{{ p.content }}</p>
+            </div>
+        </div>
+    </div>
+</section>
